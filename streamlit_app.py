@@ -12,10 +12,11 @@ st.set_page_config(page_title="Klasifikasi Media Sosial vs Performa Akademik", l
 st.title("📊 Dampak Media Sosial terhadap Performa Akademik Mahasiswa")
 
 # Upload dataset
-uploaded_file = st.file_uploader("📁 Upload Dataset CSV", type=["csv"])
+# uploaded_file = st.file_uploader("📁 Upload Dataset CSV", type=["csv"])
 
 if uploaded_file is not None:
-    df = pd.read_csv(uploaded_file)
+    df = pd.read_csv("Students Social Media Addiction.csv")
+    # df = pd.read_csv(uploaded_file)
 
     st.subheader("1. 📌 Data Awal")
     st.write(df.head())
