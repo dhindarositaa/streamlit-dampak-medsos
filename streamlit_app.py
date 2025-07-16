@@ -11,7 +11,7 @@ st.set_page_config(page_title="Klasifikasi Media Sosial vs Performa Akademik", l
 
 st.title("📊 Dampak Media Sosial terhadap Performa Akademik Mahasiswa")
 
-if uploaded_file is not None:
+try:
     df = pd.read_csv("Students Social Media Addiction.csv")
 
     st.subheader("1. 📌 Data Awal")
