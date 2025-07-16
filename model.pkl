@@ -1,0 +1,4 @@
+import joblib
+
+# Simpan model setelah training
+joblib.dump(model, 'model.pkl')
