@@ -11,6 +11,9 @@ st.set_page_config(page_title="Klasifikasi Media Sosial vs Performa Akademik", l
 
 st.title("📊 Dampak Media Sosial terhadap Performa Akademik Mahasiswa")
 
+# ======================
+# 1. Load Dataset langsung dari file
+# ======================
 try:
     df = pd.read_csv("Students Social Media Addiction.csv")
 
@@ -19,7 +22,7 @@ try:
 
     # Cek data null
     if df.isnull().sum().sum() > 0:
-        st.warning("Data mengandung nilai kosong. Mohon bersihkan dulu.")
+        st.warning("⚠️ Data mengandung nilai kosong. Mohon bersihkan dulu.")
     else:
         st.success("✅ Data bersih, tidak ada nilai kosong.")
 
@@ -63,3 +66,6 @@ try:
         fig, ax = plt.subplots(figsize=(12, 6))
         plot_tree(model, feature_names=X.columns, class_names=['No', 'Yes'], filled=True)
         st.pyplot(fig)
+
+except FileNotFoundError:
+    st.error("❌ File 'Students Social Media Addiction.csv' tidak ditemukan di folder.")
